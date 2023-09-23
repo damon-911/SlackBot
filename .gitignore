@@ -1,2 +1,6 @@
 SlashCommand/__pycache__
 SlashCommand/slash_secrets.py
+
+CustomCommand/__pycache__
+CustomCommand/custom_secrets.py
+CustomCommand/slack-bot-398011-0132f42e0dfa.json
