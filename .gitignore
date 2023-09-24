@@ -1,6 +1,8 @@
+# 슬래시 명령어
 SlashCommand/__pycache__
 SlashCommand/slash_secrets.py
 
+# 커스텀 명령어
 CustomCommand/__pycache__
 CustomCommand/custom_secrets.py
 CustomCommand/slack-bot-398011-0132f42e0dfa.json
