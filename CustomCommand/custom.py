@@ -3,7 +3,8 @@ import gspread
 import oauth2client.service_account
 from slack_bolt.app.async_app import AsyncApp
 from slack_bolt.adapter.socket_mode.async_handler import AsyncSocketModeHandler
-from custom_secrets import SLACK_SIGNING_SECRET, SLACK_BOT_TOKEN, SLACK_APP_TOKEN, SLACK_BOT_JSON, GOOGLE_SHEET_URL, GOOGLE_SHEET_NAME
+from custom_secrets import SLACK_SIGNING_SECRET, SLACK_BOT_TOKEN, SLACK_APP_TOKEN
+from custom_secrets import SLACK_BOT_JSON, GOOGLE_SHEET_URL, GOOGLE_SHEET_NAME
 
 scope = [
     'https://spreadsheets.google.com/feeds',
@@ -51,7 +52,7 @@ async def handle_message_events(event, message, say):
                     worksheet.update_acell(cellPos, user)
                     await say("등록이 완료되었습니다.")
                 else:
-                    await say("소유자가 이미 등록되어 있습니다.")
+                    await say("사용자가 이미 등록되어 있습니다.")
                 return
 
         await say(phone + "은(는) 존재하지 않습니다.")
@@ -73,7 +74,7 @@ async def handle_message_events(event, message, say):
                     worksheet.update_acell(cellPos, "")
                     await say("해제가 완료되었습니다.")
                 else:
-                    await say("소유자가 등록되어 있지 않습니다.")
+                    await say("사용자가 등록되어 있지 않습니다.")
                 return
 
         await say(phone + "은(는) 존재하지 않습니다.")
